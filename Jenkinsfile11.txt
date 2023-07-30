@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+	stages {
+	    stage('build') {
+		        steps {
+				        echo 'running the build...'
+				}
+		}
+		stage('test: integration-&-quality') {
+				steps {
+						echo 'running the integration and quality test...'
+				}
+		}
+		stage('test: functional') {
+				steps {
+						echo 'running the functional test...'
+				}
+		}
+		stage('approval') {
+				steps {
+						echo "running the approval process..."
+				}
+		}
+		stage('deploy:prod') {
+				steps {
+						echo "running the deployment in prod process..."
+				}
+		}
+	}
+}
